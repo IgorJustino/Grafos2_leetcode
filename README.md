@@ -16,14 +16,14 @@ O projeto consiste na resolução de questões que examinam o conteúdo visto na
 
 ## Problema 1: [1489. Find Critical and Pseudo-Critical Edges in Minimum Spanning Tree](https://leetcode.com/problems/find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree/)
 - Nível: Difícil
-- Implementação:[Código 1]()
+- Implementação:[Código 1](https://github.com/IgorJustino/Grafos2_leetcode/blob/main/1489.%20Find%20Critical%20and%20Pseudo-Critical%20Edges%20in%20Minimum%20Spanning%20Tree)
 
 **_._**
   
 ![](./0785.png)
 ## Problema 2: [210. Course Schedule II](https://leetcode.com/problems/course-schedule-ii/description/)
 - Nível: Médio
-- Implementação:[Código 2]()
+- Implementação:[Código 2](https://github.com/IgorJustino/Grafos2_leetcode/blob/main/210.%20Course%20Schedule%20II)
 
 **_._**
 
@@ -31,7 +31,7 @@ O projeto consiste na resolução de questões que examinam o conteúdo visto na
 
 ## Problema 3: [1293. Shortest Path in a Grid with Obstacles Elimination](https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/)
 - Nível: Difícil
-- Implementação:[Código 3]()
+- Implementação:[Código 3](https://github.com/IgorJustino/Grafos2_leetcode/blob/main/1293.%20Shortest%20Path%20in%20a%20Grid%20with%20Obstacles%20Elimination)
   
 **_._**
 
@@ -39,7 +39,7 @@ O projeto consiste na resolução de questões que examinam o conteúdo visto na
 
 ## Problema 4: [1584. Min Cost to Connect All Points](https://leetcode.com/problems/min-cost-to-connect-all-points/description/)
 - Nível: Difícil
-- Implementação:[Código 4]()
+- Implementação:[Código 4](https://github.com/IgorJustino/Grafos2_leetcode/blob/main/1584.%20Min%20Cost%20to%20Connect%20All%20Points)
 
 **_._**
 
