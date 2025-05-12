@@ -1,0 +1,41 @@
+from typing import List
+from collections import defaultdict
+
+class Solution:
+    def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
+        # Cria o grafo como uma lista de adjacência
+        graph = defaultdict(list)
+        for course, prereq in prerequisites:
+            graph[prereq].append(course)
+        
+        # Estados: 0 = não visitado, 1 = sendo visitado, 2 = visitado
+        visited = [0] * numCourses
+        result = []
+        
+        def has_cycle(node: int) -> bool:
+            # Se o nó está sendo visitado, encontramos um ciclo
+            if visited[node] == 1:
+                return True
+            # Se já foi visitado completamente, não há necessidade de revisitar
+            if visited[node] == 2:
+                return False
+            
+            # Marca como sendo visitado
+            visited[node] = 1
+            # Explora todos os vizinhos
+            for neighbor in graph[node]:
+                if has_cycle(neighbor):
+                    return True
+            # Marca como visitado completamente
+            visited[node] = 2
+            # Adiciona à ordem (pós-ordem para ordenação topológica)
+            result.append(node)
+            return False
+        
+        # Verifica cada curso
+        for course in range(numCourses):
+            if visited[course] == 0 and has_cycle(course):
+                return []  # Ciclo detectado, impossível completar
+                
+        # Retorna a ordem invertida (ordem topológica)
+        return result[::-1]
