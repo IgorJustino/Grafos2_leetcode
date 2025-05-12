@@ -1,0 +1,44 @@
+from typing import List
+import heapq
+
+class Solution:
+    def shortestPath(self, grid: List[List[int]], k: int) -> int:
+        m, n = len(grid), len(grid[0])
+        
+        # Se k é grande o suficiente, podemos ir diretamente (distância de Manhattan)
+        if k >= m + n - 2:
+            return m + n - 2
+            
+        # Direções: cima, baixo, esquerda, direita
+        directions = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+        
+        # Estado: (distância, linha, coluna, eliminações restantes)
+        # Fila de prioridade para explorar estados com menor distância
+        queue = [(0, 0, 0, k)]  # (distância, x, y, eliminações)
+        
+        # Visitados: (linha, coluna, eliminações) para evitar ciclos
+        seen = set([(0, 0, k)])
+        
+        while queue:
+            dist, row, col, eliminations = heapq.heappop(queue)
+            
+            # Chegamos ao destino
+            if row == m - 1 and col == n - 1:
+                return dist
+                
+            # Explora as quatro direções
+            for dx, dy in directions:
+                new_row, new_col = row + dx, col + dy
+                
+                # Verifica se a nova posição é válida
+                if 0 <= new_row < m and 0 <= new_col < n:
+                    new_eliminations = eliminations - grid[new_row][new_col]
+                    new_state = (new_row, new_col, new_eliminations)
+                    
+                    # Verifica se podemos visitar a célula (temos eliminações suficientes e não visitamos o estado)
+                    if new_eliminations >= 0 and new_state not in seen:
+                        seen.add(new_state)
+                        heapq.heappush(queue, (dist + 1, new_row, new_col, new_eliminations))
+        
+        # Não encontramos um caminho válido
+        return -1
