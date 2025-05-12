@@ -1,0 +1,66 @@
+from typing import List
+
+class DisjointSet:
+    def __init__(self, size: int):
+        # Inicializa cada nó como seu próprio pai
+        self.leader = list(range(size))
+    
+    def find(self, node: int) -> int:
+        # Encontra a raiz do conjunto com compressão de caminho
+        if self.leader[node] != node:
+            self.leader[node] = self.find(self.leader[node])
+        return self.leader[node]
+    
+    def merge(self, node1: int, node2: int) -> bool:
+        # Une dois conjuntos e retorna True se a união foi bem-sucedida
+        root1, root2 = self.find(node1), self.find(node2)
+        if root1 == root2:
+            return False
+        self.leader[root2] = root1
+        return True
+
+class Solution:
+    def findCriticalAndPseudoCriticalEdges(self, num_nodes: int, edges: List[List[int]]) -> List[List[int]]:
+        # Adiciona o índice original de cada aresta para rastreamento
+        edge_list = [edge + [idx] for idx, edge in enumerate(edges)]
+        edge_list.sort(key=lambda x: x[2])  # Ordena por peso
+
+        def run_kruskal(num_nodes: int, edges: List[List[int]], exclude_idx: int = -1, include_edge: List[int] = None) -> float:
+            # Inicializa estrutura de conjuntos disjuntos
+            ds = DisjointSet(num_nodes)
+            total_weight = 0
+            
+            # Força a inclusão de uma aresta, se especificada
+            if include_edge:
+                if ds.merge(include_edge[0], include_edge[1]):
+                    total_weight += include_edge[2]
+            
+            # Aplica algoritmo de Kruskal
+            for i, (node1, node2, weight, edge_idx) in enumerate(edges):
+                if i == exclude_idx:
+                    continue
+                if ds.merge(node1, node2):
+                    total_weight += weight
+            
+            # Verifica se o grafo é conexo
+            root = ds.find(0)
+            for i in range(1, num_nodes):
+                if ds.find(i) != root:
+                    return float('inf')  # Grafo desconexo
+            return total_weight
+
+        # Calcula o custo da MST (árvore geradora mínima)
+        mst_weight = run_kruskal(num_nodes, edge_list)
+        critical_edges = []
+        pseudo_critical_edges = []
+
+        # Testa cada aresta para determinar se é crítica ou pseudo-crítica
+        for i, edge in enumerate(edge_list):
+            # Aresta crítica: remover aumenta o custo da MST
+            if run_kruskal(num_nodes, edge_list, exclude_idx=i) > mst_weight:
+                critical_edges.append(edge[3])
+            # Aresta pseudo-crítica: forçar inclusão mantém o custo da MST
+            elif run_kruskal(num_nodes, edge_list, include_edge=edge) == mst_weight:
+                pseudo_critical_edges.append(edge[3])
+
+        return [critical_edges, pseudo_critical_edges]
