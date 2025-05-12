@@ -29,7 +29,7 @@ O projeto consiste na resolução de questões que examinam o conteúdo visto na
 
 ![](./210..png)
 
-## Problema 3: [3017 Count the Number of Houses at a Certain Distance II]()
+## Problema 3: [1293. Shortest Path in a Grid with Obstacles Elimination](https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/)
 - Nível: Difícil
 - Implementação:[Código 3]()
   
@@ -37,7 +37,7 @@ O projeto consiste na resolução de questões que examinam o conteúdo visto na
 
 ![](./3017.png)
 
-## Problema 4: [834 Sum of Distances in Tree]()
+## Problema 4: [1584. Min Cost to Connect All Points](https://leetcode.com/problems/min-cost-to-connect-all-points/description/)
 - Nível: Difícil
 - Implementação:[Código 4]()
 
@@ -50,11 +50,10 @@ O projeto consiste na resolução de questões que examinam o conteúdo visto na
 **Framework**: _(Nenhum)_ <br>
 
 ## Uso
-Necessário um compilador C99 ou superior. Por exemplo, para compilar o arquivo `problem1.c` utilizando o GCC:
+Não é necessário compilador, apenas o interpretador Python 3. Para executar o arquivo `script1.py`:
 
 ```
-$ gcc ./problem.1c -o problem1
-$ ./problem1
+$ python3 script1.py
 ```
 
 
