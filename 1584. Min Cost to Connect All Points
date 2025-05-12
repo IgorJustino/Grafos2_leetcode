@@ -1,0 +1,40 @@
+from typing import List
+import heapq
+
+class Solution:
+    def minCostConnectPoints(self, points: List[List[int]]) -> int:
+        n = len(points)
+        if n <= 1:
+            return 0
+            
+        # Constrói o grafo implicitamente calculando distâncias de Manhattan
+        def manhattan_distance(p1, p2):
+            return abs(p1[0] - p2[0]) + abs(p1[1] - p2[1])
+        
+        # Inicializa a lista de adjacência para o nó inicial
+        adj = [(manhattan_distance(points[0], points[i]), i) for i in range(1, n)]
+        heapq.heapify(adj)
+        
+        # Inicializa variáveis para o algoritmo de Prim
+        total_cost = 0
+        visited = {0}  # Começa com o ponto 0
+        edges_used = 0
+        
+        while adj and edges_used < n - 1:
+            cost, node = heapq.heappop(adj)
+            
+            # Ignora se o nó já foi visitado
+            if node in visited:
+                continue
+                
+            # Adiciona o custo e marca o nó como visitado
+            total_cost += cost
+            visited.add(node)
+            edges_used += 1
+            
+            # Adiciona novas arestas para os nós não visitados
+            for next_node in range(n):
+                if next_node not in visited:
+                    heapq.heappush(adj, (manhattan_distance(points[node], points[next_node]), next_node))
+        
+        return total_cost
