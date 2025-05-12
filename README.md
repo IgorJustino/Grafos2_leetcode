@@ -20,7 +20,7 @@ O projeto consiste na resolução de questões que examinam o conteúdo visto na
 
 **_._**
   
-![](./0785.png)
+
 ## Problema 2: [210. Course Schedule II](https://leetcode.com/problems/course-schedule-ii/description/)
 - Nível: Médio
 - Implementação:[Código 2](https://github.com/IgorJustino/Grafos2_leetcode/blob/main/210.%20Course%20Schedule%20II)
@@ -35,7 +35,7 @@ O projeto consiste na resolução de questões que examinam o conteúdo visto na
   
 **_._**
 
-![](./3017.png)
+
 
 ## Problema 4: [1584. Min Cost to Connect All Points](https://leetcode.com/problems/min-cost-to-connect-all-points/description/)
 - Nível: Difícil
@@ -43,7 +43,7 @@ O projeto consiste na resolução de questões que examinam o conteúdo visto na
 
 **_._**
 
-![](./834.png)
+
 
 ## Instalação 
 **Linguagem**:Python3 <br>
