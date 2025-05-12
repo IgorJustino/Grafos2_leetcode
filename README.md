@@ -27,7 +27,7 @@ O projeto consiste na resolução de questões que examinam o conteúdo visto na
 
 **_._**
 
-![](./210..png)
+![](./210.png)
 
 ## Problema 3: [1293. Shortest Path in a Grid with Obstacles Elimination](https://leetcode.com/problems/shortest-path-in-a-grid-with-obstacles-elimination/)
 - Nível: Difícil
