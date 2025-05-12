@@ -27,7 +27,7 @@ O projeto consiste na resolução de questões que examinam o conteúdo visto na
 
 **_._**
 
-![](./332.png)
+![](./210..png)
 
 ## Problema 3: [3017 Count the Number of Houses at a Certain Distance II]()
 - Nível: Difícil
