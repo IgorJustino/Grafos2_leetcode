@@ -2,8 +2,10 @@
 
 # Leetcode
 
-**Número da Lista**: 1<br>
-**Conteúdo da Disciplina**: Grafos 1 <br>
+**Apresentação**: [Clique aqui](https://youtu.be/Ug82a3kaNfo) para acessar o vídeo de apresentação.
+
+**Número da Lista**: 2<br>
+**Conteúdo da Disciplina**: Grafos 2 <br>
 
 ## Alunos
 |Matrícula | Aluno |
@@ -12,7 +14,7 @@
 | 21/1061968  |  João Pedro Veras Gomes |
 
 ## Sobre 
-O projeto consiste na resolução de questões que examinam o conteúdo visto na sala de aula sobre conceitos iniciais de gráficos
+O projeto consiste na resolução de questões que abordam o conteúdo visto na sala de aula sobre conceitos de grafos
 
 ## Problema 1: [1489. Find Critical and Pseudo-Critical Edges in Minimum Spanning Tree](https://leetcode.com/problems/find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree/)
 - Nível: Difícil
